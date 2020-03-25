@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ba.unsa.etf.rs.tut4.Controller"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.tut4.Controller">
+   <children>
+      <TabPane  maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Artikli">
+              <GridPane>
+                  <columnConstraints>
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                  <children>
+                     <TextArea prefHeight="200.0" prefWidth="200.0">
+                        <GridPane.margin>
+                           <Insets bottom="30.0" left="20.0" top="20.0" />
+                        </GridPane.margin>
+                     </TextArea>
+                     <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                           <Insets bottom="10.0" left="20.0" />
+                        </GridPane.margin>
+                     </TextArea>
+                     <Button mnemonicParsing="false" onAction="#dodajArtikle" text="Dodaj artikle" GridPane.columnIndex="1">
+                        <GridPane.margin>
+                           <Insets left="20.0" />
+                        </GridPane.margin>
+                     </Button>
+                  </children>
+               </GridPane>
+          </Tab>
+          <Tab text="Račun">
+              <GridPane>
+            
+        </GridPane>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>
