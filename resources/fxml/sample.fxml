@@ -4,10 +4,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.tut4.Controller">
    <children>
-      <TabPane  maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Artikli">
               <GridPane>
@@ -20,7 +19,7 @@
                      <RowConstraints />
                   </rowConstraints>
                   <children>
-                     <TextArea prefHeight="200.0" prefWidth="200.0">
+                     <TextArea fx:id="uzimaArtikle" prefHeight="200.0" prefWidth="200.0">
                         <GridPane.margin>
                            <Insets bottom="30.0" left="20.0" top="20.0" />
                         </GridPane.margin>

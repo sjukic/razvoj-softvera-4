@@ -15,19 +15,10 @@ public class Artikal {
     }
 
     public Artikal(String recenica){
-        int brojac = 0;
-        for (String rijec: recenica.split(",")) {
-            if (brojac == 0){
-                setSifra(rijec);
-            }
-            else if (brojac == 1){
-                setNaziv(rijec);
-            }
-            else if(brojac == 2){
-                setCijena(Double.valueOf(rijec));
-            }
-            brojac++;
-        }
+        String[] atributi = recenica.split(",");
+        setSifra(atributi[0]);
+        setNaziv(atributi[1]);
+        setCijena(Double.parseDouble(atributi[2]));
     }
     public String getSifra() {
         return sifra;
@@ -75,7 +66,7 @@ public class Artikal {
     @Override
     public boolean equals(Object o){
         Artikal artikal = (Artikal)o;
-        if (this.sifra == ((Artikal) o).sifra && this.naziv == ((Artikal) o).naziv && this.cijena == ((Artikal) o).cijena)
+        if (this.sifra.equals(((Artikal) o).sifra) && this.naziv.equals(((Artikal) o).naziv) && this.cijena == ((Artikal) o).cijena)
             return true;
         return false;
     }
