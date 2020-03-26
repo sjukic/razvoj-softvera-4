@@ -70,5 +70,4 @@ public class Artikal {
             return true;
         return false;
     }
-
 }
