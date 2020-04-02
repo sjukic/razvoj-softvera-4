@@ -9,6 +9,18 @@ public class Racun {
     private ArrayList<Artikal> sviArtikli = new ArrayList<>();
     private ArrayList<Double> kolicinaArtikala = new ArrayList<>();
 
+    public Racun(){
+
+    }
+
+    public ArrayList<Artikal> getSviArtikli() {
+        return sviArtikli;
+    }
+
+    public ArrayList<Double> getKolicinaArtikala() {
+        return kolicinaArtikala;
+    }
+
     public void dodajStavku (Artikal noviArtikal, double kolicina){
         this.noviArtikal = noviArtikal;
         this.kolicina = kolicina;

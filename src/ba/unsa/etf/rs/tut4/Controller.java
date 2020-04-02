@@ -15,9 +15,11 @@ public class Controller {
     public Spinner spinnerKolicina;
     public ChoiceBox padajucaLista;
 
+    private ArrayList<Artikal> listaArtikala = new ArrayList<>();
+    private Racun sadasnjiRacun = new Racun();
+
     public void dodajArtikle(ActionEvent actionEvent) {
         String sviArtikli = uzimaArtikle.getText();
-        ArrayList<Artikal> listaArtikala = new ArrayList<>();
         for (String artikal: sviArtikli.split("\n")) {
             listaArtikala.add(new Artikal(artikal));
         }
@@ -34,14 +36,17 @@ public class Controller {
     }
 
     public void dugmeArtikliRacun(ActionEvent actionEvent) {
-        String sviArtikli = uzimaArtikle.getText();
-        ArrayList<Artikal> listaArtikala = new ArrayList<>();
-        for (String artikal: sviArtikli.split("\n")) {
-            listaArtikala.add(new Artikal(artikal));
+        ispisAktuelnogRacuna.clear();
+        for(int i=0; i<listaArtikala.size(); i++){
+            if(listaArtikala.get(i).getSifra().equals(padajucaLista.getValue())){
+                sadasnjiRacun.dodajStavku(listaArtikala.get(i),(Integer)spinnerKolicina.getValue());
+            }
         }
-        Artikal.izbaciDuplikate(listaArtikala);
-        String s =  new String();
-        s = padajucaLista.getValue().toString() + spinnerKolicina.getValue().toString();
-        System.out.println(s);
+        String string = new String();
+        for(int i=0; i<sadasnjiRacun.getSviArtikli().size(); i++){
+            string = string + String.format("%-12s %-4s %.2f\n",sadasnjiRacun.getSviArtikli().get(i).getSifra(),sadasnjiRacun.getKolicinaArtikala().get(i).toString(),sadasnjiRacun.getSviArtikli().get(i).getCijena());
+        }
+        string = string + String.format("UKUPNO %13.2f",sadasnjiRacun.ukupanIznos());
+        ispisAktuelnogRacuna.setText(string);
     }
 }
