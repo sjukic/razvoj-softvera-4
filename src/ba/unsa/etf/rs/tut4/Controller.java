@@ -1,9 +1,8 @@
 package ba.unsa.etf.rs.tut4;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+
 import java.util.ArrayList;
 
 
@@ -14,6 +13,9 @@ public class Controller {
     public TextArea ispisAktuelnogRacuna;
     public Spinner spinnerKolicina;
     public ChoiceBox padajucaLista;
+    public Button buttonZaDodavanjeArtikala;
+    public Tab karticaRacun;
+    public Button buttonZaIspisRacuna;
 
     private ArrayList<Artikal> listaArtikala = new ArrayList<>();
     private Racun sadasnjiRacun = new Racun();
