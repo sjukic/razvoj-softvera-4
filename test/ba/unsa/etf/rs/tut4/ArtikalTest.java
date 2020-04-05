@@ -146,6 +146,7 @@ class ArtikalTest {
     @Test
     void testKonstruktoraBezParametara (){
         Artikal a1 = new Artikal(); //samo pozivamo konstruktor bez parametara da vidimo da li postoji
+        assertEquals(a1.getCijena(),0.0);
     }
 
     @Test
@@ -159,5 +160,26 @@ class ArtikalTest {
         Artikal a1 = new Artikal("HB01,Mlijeko,1.5");
         String string = "HB01,Mlijeko,1.5";
         assertEquals(a1.toString(),string);
+    }
+
+    @Test
+    void testMetodeEquals(){
+        Artikal a1 = new Artikal("HB01,Mlijeko,1.5");
+        Artikal a2 =  new Artikal("HB002,Hljeb,0.9");
+        Artikal a3 =  new Artikal("HB002,Hljeb,0.9");
+        assertTrue(a2.equals(a3));
+        assertFalse(a1.equals(a3));
+    }
+
+    @Test
+    void testIzbaciDuplikate(){
+        ArrayList<Artikal> lista = new ArrayList<>();
+        lista.add(new Artikal("HB01,Mlijeko,1.5"));
+        lista.add(new Artikal("HB002,Hljeb,0.9"));
+        lista.add(new Artikal("HB002,Hljeb,0.9"));
+        lista.add(new Artikal("HB002,Hljeb,0.9"));
+        lista.add(new Artikal("HB002,Hljeb,0.9"));
+        Artikal.izbaciDuplikate(lista);
+        assertEquals(lista.size(),2);
     }
 }
