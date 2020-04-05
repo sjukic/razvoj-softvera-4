@@ -140,4 +140,24 @@ class ArtikalTest {
         assertFalse(lista.contains(new Artikal("ABC", "Usluga", 100)));
         assertFalse(lista.contains(new Artikal("DEF", "Usluga", 100)));
     }
+
+    //Testovi tutorijala 4
+
+    @Test
+    void testKonstruktoraBezParametara (){
+        Artikal a1 = new Artikal(); //samo pozivamo konstruktor bez parametara da vidimo da li postoji
+    }
+
+    @Test
+    void testKonstruktoraString (){
+        Artikal a1 = new Artikal("HB01,Hljeb,0.9");
+        assertEquals(new Artikal("HB01", "Hljeb", 0.9),a1);
+    }
+
+    @Test
+    void testMetodeToString(){
+        Artikal a1 = new Artikal("HB01,Mlijeko,1.5");
+        String string = "HB01,Mlijeko,1.5";
+        assertEquals(a1.toString(),string);
+    }
 }
