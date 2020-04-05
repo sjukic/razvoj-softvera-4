@@ -182,4 +182,18 @@ class ArtikalTest {
         Artikal.izbaciDuplikate(lista);
         assertEquals(lista.size(),2);
     }
+
+    @Test
+    void testIzuzetak(){
+        Artikal novi = new Artikal("HB001,Hljeb,0.9");
+        assertThrows(IllegalArgumentException.class, () -> {
+            novi.setSifra("");
+        }, "Šifra je prazna");
+        assertThrows(IllegalArgumentException.class, () -> {
+            novi.setNaziv("");
+        }, "Naziv je prazna");
+        assertThrows(IllegalArgumentException.class, () -> {
+            novi.setCijena(-5);
+        }, "Cijena je negativna");
+    }
 }
